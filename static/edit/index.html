@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NCG - UserContent - Search</title>
+  </head>
+  <body>
+    <m-overwrite-container>
+      <div class="contentWrap">
+        <n-title-bar>Nicolas Sisitg</n-title-bar>
+        <n-user-card></n-user-card>
+        <div class="contentWrap padding">
+          <m-button stretch="true">Hinzufügen</m-button>
+          <div class="box" id="selectionWrap">
+            <div class="selection" id="selectionImage">
+              <img src="/lib/img/image.svg" />
+              <a>Bild</a>
+              <m-wave></m-wave>
+            </div>
+            <div id="verticalLine"></div>
+            <div class="selection" id="selectionText">
+              <img src="/lib/img/edit.svg" />
+              <a>Text</a>
+              <m-wave></m-wave>
+            </div>
+          </div>
+          <m-text-input
+            textarea="true"
+            placeholder="Text"
+            id="textInput"
+          ></m-text-input>
+          <div class="box">
+            <m-wave></m-wave>
+            <label for="fileUpload" id="customFileUpload">
+              <img src="/lib/img/plus.svg" />
+              Bilder auswählen.
+            </label>
+            <input
+              id="fileUpload"
+              type="file"
+              multiple
+              accept="image/png, image/jpeg"
+            />
+          </div>
+          <m-button stretch="true" id="send">Senden</m-button>
+          <m-button stretch="true" type="outlined">Anschauen</m-button>
+        </div>
+      </div>
+    </m-overwrite-container>
+    <script class="server" src="private/render/linker.js"></script>
+  </body>
+</html>

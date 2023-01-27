@@ -1,0 +1,34 @@
+{
+  "components": {
+    "user": {
+      "name": "n-user",
+      "template": "/components/user/index.html",
+      "component": "/components/user/main.js",
+      "styles": ["/main.css", "/components/user/style.css"]
+    },
+    "user-card": {
+      "name": "n-user-card",
+      "template": "/components/user-card/index.html",
+      "component": "/components/user-card/main.js",
+      "styles": ["/main.css", "/components/user-card/style.css"]
+    },
+    "title": {
+      "name": "n-title",
+      "template": "/components/title/index.html",
+      "component": "/components/title/main.js",
+      "styles": ["/main.css", "/components/title/style.css"]
+    },
+    "title-bar": {
+      "name": "n-title-bar",
+      "template": "/components/title-bar/index.html",
+      "component": "/components/title-bar/main.js",
+      "styles": ["/main.css", "/components/title-bar/style.css"]
+    },
+    "content-display": {
+      "name": "n-content-display",
+      "template": "/components/content-display/index.html",
+      "component": "/components/content-display/main.js",
+      "styles": ["/main.css", "/components/content-display/style.css"]
+    }
+  }
+}

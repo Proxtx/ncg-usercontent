@@ -1,0 +1,15 @@
+#userSuggestions {
+  background-color: var(--lightGrey);
+  border-radius: var(--borderRadius);
+  gap: var(--contentSpacing);
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width: 246px;
+}
+
+#user {
+  position: absolute;
+  top: var(--contentSpacing);
+  right: var(--contentSpacing);
+}

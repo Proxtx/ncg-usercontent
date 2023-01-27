@@ -1,0 +1,6 @@
+#title {
+  display: flex;
+  align-items: center;
+  padding: var(--contentSpacing);
+  justify-content: space-between;
+}

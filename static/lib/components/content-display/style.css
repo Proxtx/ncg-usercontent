@@ -1,0 +1,13 @@
+#img {
+  width: 100%;
+}
+
+#userWrap {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--contentSpacing);
+}
+
+#wave {
+  --accentColor: #dd1c1a;
+}

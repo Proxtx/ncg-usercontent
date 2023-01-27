@@ -1,0 +1,9 @@
+.contentWrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--contentSpacing);
+}
+
+.padding {
+  padding: var(--contentSpacing);
+}

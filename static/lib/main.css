@@ -1,0 +1,62 @@
+:root {
+  --contentSpacing: 12px;
+  --accentColor: #dd1c1a;
+  --backgroundColor: #ebebeb;
+  --textColor: #000000;
+  --grey: #727272;
+  --lightGrey: #d0d0d0;
+  --borderRadius: 4px;
+}
+
+:host {
+  --contentSpacing: 12px;
+  --accentColor: #dd1c1a;
+  --backgroundColor: #ebebeb;
+  --textColor: #000000;
+  --grey: #727272;
+  --lightGrey: #d0d0d0;
+  --borderRadius: 4px;
+}
+
+m-overwrite-container {
+  --accentColor: #dd1c1a;
+  --backgroundColor: #ebebeb;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+@font-face {
+  font-family: Dosis;
+  src: url(dosis.ttf);
+}
+
+body {
+  font-family: Dosis;
+  margin: 0;
+  background-color: var(--backgroundColor);
+}
+
+.centerWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--contentSpacing);
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+}
+
+.box {
+  background-color: var(--lightGrey);
+  border: 1px solid var(--grey);
+  border-radius: var(--borderRadius);
+  overflow: hidden;
+  position: relative;
+}

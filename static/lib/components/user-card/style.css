@@ -1,0 +1,18 @@
+#wrap {
+  background-color: var(--lightGrey);
+  border-bottom-left-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+  padding: var(--contentSpacing);
+  display: flex;
+  gap: calc(var(--contentSpacing) * 2);
+  position: relative;
+}
+
+#img {
+  width: 100px;
+  border-radius: var(--borderRadius);
+}
+
+#userWave {
+  --accentColor: #dd1c1a;
+}
