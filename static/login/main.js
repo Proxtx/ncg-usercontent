@@ -7,7 +7,7 @@ const loginButton = document.getElementById("loginButton");
 if (
   cookie.username &&
   cookie.password &&
-  (await meta.auth(cookie.username, cookie.password)).success
+  await meta.auth(cookie.username, cookie.password)
 )
   location.pathname = "/";
 
