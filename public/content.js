@@ -1,6 +1,5 @@
 import { auth } from "./meta.js";
 import { getUserFile } from "../private/content.js";
-import config from "@proxtx/config";
 
 export const addContent = async (
   username,
@@ -21,11 +20,6 @@ export const addContent = async (
 export const getContent = async (username, password, contentUsername) => {
   if (!(await auth(username, password))) return;
   return await (await getUserFile(contentUsername)).getContent();
-};
-
-export const getInfoPhrases = async (username, password) => {
-  //if (!(await auth(username, password))) return;
-  return config.infoPhrases;
 };
 
 export const deleteContent = async (username, password, index) => {

@@ -8,5 +8,5 @@ export const auth = async (username, password) => {
       method: "POST",
     })
   ).json();
-  return res;
+  return res.success;
 };

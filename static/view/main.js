@@ -8,6 +8,12 @@ userCard.setAttribute("username", requestedUsername);
 
 let contentWrap = document.getElementById("contentWrap");
 let mainWrap = document.getElementById("mainWrap");
+let back = document.getElementById("back");
+
+back.addEventListener("click", async () => {
+  await new Promise((r) => setTimeout(r, 200));
+  location.href = "/user/" + location.search;
+});
 
 await new Promise((r) => setTimeout(r, 1000));
 
@@ -16,6 +22,7 @@ let userContent = (
 ).reverse();
 
 const createContentDisplay = async (index) => {
+  if (index >= userContent.length) return false;
   let elem = document.createElement("n-content-display");
   await uiBuilder.ready(elem);
   await elem.component.display(
@@ -23,10 +30,19 @@ const createContentDisplay = async (index) => {
     userContent.length - 1 - index
   );
   contentWrap.appendChild(elem);
+  return true;
 };
 
 let contentIndex = 0;
 
 do {
-  await createContentDisplay(contentIndex++);
+  if (!(await createContentDisplay(contentIndex++))) break;
 } while (mainWrap.clientHeight >= mainWrap.scrollHeight);
+
+mainWrap.addEventListener("scroll", async () => {
+  while (
+    mainWrap.clientHeight + mainWrap.scrollTop + 200 >=
+    mainWrap.scrollHeight
+  )
+    if (!(await createContentDisplay(contentIndex++))) return;
+});

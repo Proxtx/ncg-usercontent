@@ -18,6 +18,12 @@ let viewButton = document.getElementById("view");
 let uploadNotice = document.getElementById("uploadNotice");
 let fileUploadHint = document.getElementById("fileUploadHint");
 let fileUploadHintImage = document.getElementById("fileUploadHintImage");
+let back = document.getElementById("back");
+
+back.addEventListener("click", async () => {
+  await new Promise((r) => setTimeout(r, 200));
+  location.href = "/search";
+});
 
 textInput.component.wrap.style.width = "100%";
 textInput.component.wrap.style.height = "200px";
@@ -27,6 +33,7 @@ addButton.addEventListener("click", async () => {
   addButton.style.display = "none";
   viewButton.style.display = "none";
   selectionWrap.style.display = "flex";
+  back.style.display = "none";
 });
 
 let contentType;
@@ -100,6 +107,7 @@ sendButton.addEventListener("click", async () => {
   addButton.style.display = "unset";
   viewButton.style.display = "unset";
   uploadNotice.innerText = originalText;
+  back.style.display = "unset";
 });
 
 viewButton.addEventListener("click", async () => {

@@ -6,6 +6,7 @@ export class Component {
     this.picture = this.document.getElementById("picture");
     this.name = this.document.getElementById("name");
     this.infoPhrases = this.document.getElementById("infoPhrases");
+    this.editButton = this.document.getElementById("editButton");
   }
 
   async loadInfo(username) {
@@ -17,9 +18,17 @@ export class Component {
     this.name.innerText = info.user.firstName + " " + info.user.name;
     this.infoPhrases.innerText = Object.keys(info.info.info)
       .map((value) => value + ": " + info.info.info[value] + "\n")
-      .join();
+      .join("");
     if (info.info.picture) {
-      this.picture.src = "data:image/png;base64, " + info.info.picture;
+      this.picture.src = "/file.route/?id=" + info.info.picture;
+    }
+
+    if (username == cookie.username) {
+      this.editButton.style.display = "unset";
+      this.editButton.addEventListener("click", async () => {
+        await new Promise((r) => setTimeout(r, 200));
+        location.pathname = "/edit";
+      });
     }
   }
 

@@ -11,8 +11,14 @@
 #picture {
   width: 100px;
   border-radius: var(--borderRadius);
+  height: fit-content;
 }
 
-#userWave {
+#userWave,
+#editButton {
   --accentColor: #dd1c1a;
+}
+
+#editButton {
+  display: none;
 }
