@@ -15,8 +15,6 @@ back.addEventListener("click", async () => {
   location.href = "/user/" + location.search;
 });
 
-await new Promise((r) => setTimeout(r, 1000));
-
 let userContent = (
   await content.getContent(cookie.username, cookie.password, requestedUsername)
 ).reverse();
