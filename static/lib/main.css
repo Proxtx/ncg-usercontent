@@ -21,6 +21,7 @@
 m-overwrite-container {
   --accentColor: #dd1c1a;
   --backgroundColor: #ebebeb;
+  --accentColorTransparent: #dd1c1a20;
 }
 
 h1,

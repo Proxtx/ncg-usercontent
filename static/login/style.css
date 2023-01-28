@@ -1,0 +1,16 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+
+h2 {
+  text-align: center;
+}
+
+@media only screen and (min-device-width: 1000px) {
+  #loginWrap {
+    width: 50%;
+  }
+}

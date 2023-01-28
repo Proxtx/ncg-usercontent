@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../lib/main.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <m-overwrite-container>
+      <m-card id="loginWrap">
+        <m-text><h2>Login</h2></m-text>
+        <m-text
+          ><h4><b>Einmal anmelden und angemeldet bleiben!!</b></h4></m-text
+        >
+        <m-text
+          >Bitte einloggen um Content einzureichen. Die Login-Daten stimmen mit
+          denen der Abi-Webseite überein (Von Valentin über Teams
+          gesendet).</m-text
+        ><br /><br />
+        <m-text-input id="username" placeholder="Benutzername"></m-text-input
+        ><br /><br />
+        <m-text-input
+          id="password"
+          placeholder="Passwort"
+          password="true"
+        ></m-text-input>
+        <br /><br />
+        <m-button id="loginButton">Login</m-button>
+      </m-card>
+    </m-overwrite-container>
+    <script class="server" src="private/render/linker.js"></script>
+  </body>
+</html>
