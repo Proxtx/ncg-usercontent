@@ -9,7 +9,7 @@ export class Component {
     this.deleteButton = this.document.getElementById("deleteButton");
   }
 
-  async display(data, index) {
+  async display(data, index, requestedUser) {
     let info = await userInfo.userData(
       cookie.username,
       cookie.password,
@@ -24,7 +24,7 @@ export class Component {
       this.text.innerText = data.content.content;
     }
 
-    if (data.username == cookie.username) {
+    if (requestedUser == cookie.username) {
       this.deleteButton.style.opacity = 1;
       this.deleteButton.addEventListener("click", async () => {
         await new Promise((r) => setTimeout(r, 200));
