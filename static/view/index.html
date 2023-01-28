@@ -4,16 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NCG - UserContent - Search</title>
+    <title>NCG - UserContent - View</title>
   </head>
   <body>
     <m-overwrite-container>
-      <div class="contentWrap">
+      <div class="contentWrap" id="mainWrap">
         <n-title-bar></n-title-bar>
-        <n-user-card></n-user-card>
-        <div class="contentWrap padding">
-          <n-content-display></n-content-display>
-        </div>
+        <n-user-card id="userCard"></n-user-card>
+        <div class="contentWrap padding" id="contentWrap"></div>
       </div>
     </m-overwrite-container>
     <script class="server" src="private/render/linker.js"></script>

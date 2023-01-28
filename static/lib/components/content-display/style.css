@@ -4,10 +4,20 @@
 
 #userWrap {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: var(--contentSpacing);
+  align-items: center;
 }
 
-#wave {
+#wave,
+#deleteButton {
   --accentColor: #dd1c1a;
+}
+
+#deleteButton {
+  opacity: 0;
+}
+
+#text {
+  padding: var(--contentSpacing);
 }

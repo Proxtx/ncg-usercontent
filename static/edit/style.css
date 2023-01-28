@@ -8,29 +8,6 @@
   padding: var(--contentSpacing);
 }
 
-#selectionWrap {
-  display: flex;
-  width: 100%;
-  position: relative;
-  box-sizing: border-box;
-}
-
-.selection {
-  width: 50%;
-  height: 100px;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-#verticalLine {
-  width: 1px;
-  background-color: var(--grey);
-}
-
 #fileUpload {
   display: none;
 }

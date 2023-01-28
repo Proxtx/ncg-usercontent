@@ -29,3 +29,11 @@ export const search = (query) => {
 
   return foundUsers;
 };
+
+export const getUser = (username) => {
+  for (let user of users) {
+    if (user.username == username) return user;
+  }
+
+  return false;
+};

@@ -1,3 +1,6 @@
 export class Component {
-  constructor(config) {}
+  constructor(config) {
+    this.document = config.shadowDom;
+    this.document.getElementById("user").innerText = cookie.username;
+  }
 }

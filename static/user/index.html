@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NCG - UserContent - User</title>
+  </head>
+  <body>
+    <m-overwrite-container>
+      <div class="contentWrap">
+        <n-title-bar></n-title-bar>
+        <n-user-card id="userCard"></n-user-card>
+        <div class="contentWrap padding">
+          <m-button stretch="true" id="add">Hinzufügen</m-button>
+          <div class="box" id="selectionWrap">
+            <div class="selection" id="selectorImage">
+              <img src="/lib/img/image.svg" />
+              <a>Bild</a>
+              <m-wave></m-wave>
+            </div>
+            <div id="verticalLine"></div>
+            <div class="selection" id="selectorText">
+              <img src="/lib/img/edit.svg" />
+              <a>Text</a>
+              <m-wave></m-wave>
+            </div>
+          </div>
+          <m-text-input
+            textarea="true"
+            placeholder="Text"
+            id="textInput"
+          ></m-text-input>
+          <div class="box" id="fileUploadWrap">
+            <m-wave></m-wave>
+            <label for="fileUpload" id="customFileUpload">
+              <img id="fileUploadHintImage" src="/lib/img/plus.svg" />
+              <a id="fileUploadHint">Bilder auswählen.</a>
+            </label>
+            <input
+              id="fileUpload"
+              type="file"
+              multiple
+              accept="image/png, image/jpeg"
+            />
+          </div>
+          <h3 id="uploadNotice">Bitte warten. Content wird Hochgeladen.</h3>
+          <m-button stretch="true" id="send">Senden</m-button>
+          <m-button stretch="true" type="outlined" id="view"
+            >Anschauen</m-button
+          >
+        </div>
+      </div>
+    </m-overwrite-container>
+    <script class="server" src="private/render/linker.js"></script>
+  </body>
+</html>

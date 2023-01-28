@@ -5,7 +5,7 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "test": "nodemon ."
+    "test": "nodemon . --ignore users/ images/"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "dependencies": {
     "@proxtx/config": "^1.0.2",
     "@proxtx/framework": "^1.5.8",
-    "@proxtx/material": "^1.2.6"
+    "@proxtx/material": "^1.2.6",
+    "express-fileupload": "^1.4.0"
   }
 }
