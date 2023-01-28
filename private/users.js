@@ -19,6 +19,10 @@ export const users = (await fs.readFile("users.csv", "utf8"))
     };
   });
 
+if (!users[users.length - 1]) {
+  users.pop();
+}
+
 export const search = (query) => {
   query = query.toLowerCase();
   let foundUsers = [];
