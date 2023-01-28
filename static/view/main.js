@@ -25,7 +25,7 @@ const createContentDisplay = async (index) => {
   await uiBuilder.ready(elem);
   await elem.component.display(
     userContent[index],
-    userContent.length - 1 - index, requestedUser
+    userContent.length - 1 - index, requestedUsername
   );
   contentWrap.appendChild(elem);
   return true;
