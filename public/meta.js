@@ -4,16 +4,14 @@ export const auth = async (username, password) => {
   data.append("password", password);
   let res;
   do {
-    try{
-    res = await (
-    await fetch("https://abi.vtsem.de/auth", {
-      body: data,
-      method: "POST",
-    })
-  ).json();
-      }
-    catch {}
-    }
-  while(!res)
+    try {
+      res = await (
+        await fetch("https://abi.vtsem.de/auth", {
+          body: data,
+          method: "POST",
+        })
+      ).json();
+    } catch {}
+  } while (!res);
   return res.success;
 };
