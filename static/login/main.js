@@ -4,10 +4,16 @@ const username = document.getElementById("username");
 const password = document.getElementById("password");
 const loginButton = document.getElementById("loginButton");
 
+if (!cookie.username && cookie.publicAuth) {
+  let publicAuth = JSON.parse(decodeURIComponent(cookie.publicAuth));
+  cookie.username = publicAuth.username;
+  cookie.password = publicAuth.password;
+}
+
 if (
   cookie.username &&
   cookie.password &&
-  await meta.auth(cookie.username, cookie.password)
+  (await meta.auth(cookie.username, cookie.password))
 )
   location.pathname = "/";
 
