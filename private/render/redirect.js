@@ -2,7 +2,7 @@ import { auth } from "../../public/meta.js";
 
 export const server = async (document, options) => {
   if (!options.req.cookies.publicAuth) {
-    res.redirect("https://zitate.proxtx.de/publicAuth.html");
+    options.res.redirect("https://zitate.proxtx.de/publicAuth.html");
     return;
   }
   if (
