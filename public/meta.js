@@ -1,7 +1,7 @@
 let authStore = {};
 
 export const auth = async (username, password) => {
-  if (authStore[username] == password) return true;
+  if (authStore[username] == password && authStore[username]) return true;
   let data = new FormData();
   data.append("username", username);
   data.append("password", password);

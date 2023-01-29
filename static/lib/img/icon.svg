@@ -89,16 +89,19 @@
        height="80"
        x="58.343185"
        y="93.990356"
-       ry="9.6731005" />
+       ry="9.6731005"
+       inkscape:export-filename="icon.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,2.5092014,37.172216)"
        id="text184"
-       style="font-size:74.6667px;line-height:0;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:center;letter-spacing:18.34px;white-space:pre;shape-inside:url(#rect186);fill:#dd1c1a;fill-opacity:1;stroke-width:2.26772;paint-order:fill markers stroke;filter:url(#filter3746)"><tspan
+       style="font-size:74.6667px;line-height:0;font-family:Dosis;-inkscape-font-specification:Dosis;text-align:center;letter-spacing:18.34px;white-space:pre;shape-inside:url(#rect186);display:inline;fill:#dd1c1a;fill-opacity:1;stroke-width:2.26772;paint-order:fill markers stroke;filter:url(#filter3746)"><tspan
          x="278.94443"
          y="392.9935"
-         id="tspan4490"><tspan
+         id="tspan4871"><tspan
            style="font-weight:bold;-inkscape-font-specification:'Dosis Bold'"
-           id="tspan4488">NCG</tspan></tspan></text>
+           id="tspan4869">NCG</tspan></tspan></text>
   </g>
 </svg>
