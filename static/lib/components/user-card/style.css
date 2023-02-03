@@ -9,9 +9,10 @@
 }
 
 #picture {
-  width: 100px;
+  /*width: 100px;*/
   border-radius: var(--borderRadius);
-  height: fit-content;
+  /*height: fit-content;*/
+  height: 100px;
 }
 
 #userWave,
