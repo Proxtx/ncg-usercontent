@@ -20,6 +20,8 @@ let fileUploadHint = document.getElementById("fileUploadHint");
 let fileUploadHintImage = document.getElementById("fileUploadHintImage");
 let back = document.getElementById("back");
 
+if (requestedUsername != cookie.username) viewButton.style.display = "none";
+
 back.addEventListener("click", async () => {
   await new Promise((r) => setTimeout(r, 200));
   location.href = "/search";

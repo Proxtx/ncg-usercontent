@@ -18,7 +18,7 @@ export const addContent = async (
 };
 
 export const getContent = async (username, password, contentUsername) => {
-  if (!(await auth(username, password))) return;
+  if (!(await auth(username, password)) || username != contentUsername) return;
   return await (await getUserFile(contentUsername)).getContent();
 };
 
