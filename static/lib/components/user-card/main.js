@@ -15,9 +15,21 @@ export class Component {
       cookie.password,
       username
     );
+    let allPhrases = await userInfo.getInfoPhrases(
+      cookie.username,
+      cookie.password
+    );
+
     this.name.innerText = info.user.firstName + " " + info.user.name;
-    this.infoPhrases.innerText = Object.keys(info.info.info)
-      .map((value) => value + ": " + info.info.info[value] + "\n")
+    this.infoPhrases.innerText = allPhrases
+      .map((value) => {
+        if (info.info.info[value])
+          return value + ": " + info.info.info[value] + "\n";
+        return undefined;
+      })
+      .filter((value) => {
+        return value !== undefined;
+      })
       .join("");
     if (info.info.picture) {
       this.picture.src = "/file.route/?id=" + info.info.picture;
