@@ -2,7 +2,7 @@ let authStore = {};
 import { getUser } from "../private/users.js";
 
 export const auth = async (username, password) => {
-  if (!getUsers(username)) return false;
+  if (!getUser(username)) return false;
   if (authStore[username] == password && authStore[username]) return true;
   let data = new FormData();
   data.append("username", username);
