@@ -28,7 +28,7 @@ export class Component {
         return undefined;
       })
       .filter((value) => {
-        return value !== undefined;
+        return value !== undefined && value.trim() != "";
       })
       .join("");
     if (info.info.picture) {

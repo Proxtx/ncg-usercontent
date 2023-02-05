@@ -5,6 +5,7 @@ let input = document.getElementById("queryField").component.input;
 let userSuggestions = document.getElementById("userSuggestions");
 let user = document.getElementById("user");
 user.innerText = cookie.username;
+user.setAttribute("click", cookie.username);
 
 input.addEventListener("change", async () => {
   userSuggestions.innerHTML = "";

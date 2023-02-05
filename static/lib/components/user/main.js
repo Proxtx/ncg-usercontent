@@ -10,6 +10,11 @@ export class Component {
           .getElementById("wrap")
           .appendChild(this.document.getElementById("img"));
         break;
+      case "click":
+        this.document.getElementById("wrap").addEventListener("click", () => {
+          window.location.href = "/user/?username=" + newValue;
+        });
+        break;
     }
   }
 }
