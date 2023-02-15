@@ -1,9 +1,7 @@
 import * as _ from "/lib/guiLoader.js";
 import { content } from "/lib/apiLoader.js";
 
-window.onerror = (a1, a2, a3)=>{
-alert("Error: "+a1+". Line: "+a3);
-}
+while(!customElements.get("n-content-display")) await new Promise(r=>setTimeout(r, 10))
 
 let requestedUsername = new URL(location.href).searchParams.get("username");
 
@@ -49,3 +47,5 @@ mainWrap.addEventListener("scroll", async () => {
   )
     if (!(await createContentDisplay(contentIndex++))) return;
 });
+
+
