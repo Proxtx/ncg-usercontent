@@ -12,3 +12,15 @@
   overflow-y: auto;
   height: 100vh;
 }
+
+n-content-display {
+  max-width: 400px;
+}
+
+#contentWrap {
+  align-items: center;
+}
+
+#contentWrap * {
+  width: 100%;
+}
