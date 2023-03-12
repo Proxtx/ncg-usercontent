@@ -8,6 +8,7 @@
   width: calc(246px - var(--contentSpacing) * 2);
   padding: var(--contentSpacing);
   overflow: hidden;
+  overflow-y: auto;
 }
 
 #user {
