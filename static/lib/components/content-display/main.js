@@ -11,7 +11,7 @@ export class Component {
 
   async display(data, index, requestedUser) {
     let info = await userInfo.userData(
-      cookie.username,
+      decodeURI(cookie.username),
       cookie.password,
       data.username
     );
@@ -24,11 +24,15 @@ export class Component {
       this.text.innerText = data.content.content;
     }
 
-    if (requestedUser == cookie.username) {
+    if (requestedUser == decodeURI(cookie.username)) {
       this.deleteButton.style.opacity = 1;
       this.deleteButton.addEventListener("click", async () => {
         await new Promise((r) => setTimeout(r, 200));
-        await content.deleteContent(cookie.username, cookie.password, index);
+        await content.deleteContent(
+          decodeURI(cookie.username),
+          cookie.password,
+          index
+        );
         location.href = location.href;
       });
     }

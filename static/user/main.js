@@ -20,7 +20,8 @@ let fileUploadHint = document.getElementById("fileUploadHint");
 let fileUploadHintImage = document.getElementById("fileUploadHintImage");
 let back = document.getElementById("back");
 
-if (requestedUsername != cookie.username) viewButton.style.display = "none";
+if (requestedUsername != decodeURI(cookie.username))
+  viewButton.style.display = "none";
 
 back.addEventListener("click", async () => {
   await new Promise((r) => setTimeout(r, 200));
@@ -89,7 +90,7 @@ sendButton.addEventListener("click", async () => {
         ).json()
       ).id;
       await content.addContent(
-        cookie.username,
+        decodeURI(cookie.username),
         cookie.password,
         requestedUsername,
         contentType,
@@ -98,7 +99,7 @@ sendButton.addEventListener("click", async () => {
     }
   } else if (contentType == "text") {
     await content.addContent(
-      cookie.username,
+      decodeURI(cookie.username),
       cookie.password,
       requestedUsername,
       contentType,

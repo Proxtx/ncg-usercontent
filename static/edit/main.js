@@ -1,10 +1,13 @@
 import { userInfo } from "/lib/apiLoader.js";
 
-let phrases = await userInfo.getInfoPhrases(cookie.username, cookie.password);
+let phrases = await userInfo.getInfoPhrases(
+  decodeURI(cookie.username),
+  cookie.password
+);
 let info = await userInfo.getInfo(
-  cookie.username,
+  decodeURI(cookie.username),
   cookie.password,
-  cookie.username
+  decodeURI(cookie.username)
 );
 let done = document.getElementById("done");
 let contentWrap = document.getElementById("contentWrap");
@@ -28,7 +31,11 @@ fileUpload.addEventListener("change", async () => {
     ).json()
   ).id;
 
-  await userInfo.setInfoPicture(cookie.username, cookie.password, id);
+  await userInfo.setInfoPicture(
+    decodeURI(cookie.username),
+    cookie.password,
+    id
+  );
   redirect();
 });
 
@@ -39,7 +46,7 @@ for (let phrase of phrases) {
   elem.component.value = info.info.info[phrase] ? info.info.info[phrase] : "";
   elem.addEventListener("change", async () => {
     await userInfo.setInfoPhrase(
-      cookie.username,
+      decodeURI(cookie.username),
       cookie.password,
       phrase,
       elem.component.value
@@ -55,7 +62,7 @@ done.addEventListener("click", async () => {
 });
 
 const redirect = () => {
-  location.href = "/user/?username=" + cookie.username;
+  location.href = "/user/?username=" + decodeURI(cookie.username);
 };
 
 overwrite.component.component.findAndApplyCascadingVars();

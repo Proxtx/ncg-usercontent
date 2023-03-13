@@ -1,7 +1,8 @@
 import * as _ from "/lib/guiLoader.js";
 import { content } from "/lib/apiLoader.js";
 
-while(!customElements.get("n-content-display")) await new Promise(r=>setTimeout(r, 10))
+while (!customElements.get("n-content-display"))
+  await new Promise((r) => setTimeout(r, 10));
 
 let requestedUsername = new URL(location.href).searchParams.get("username");
 
@@ -18,7 +19,11 @@ back.addEventListener("click", async () => {
 });
 
 let userContent = (
-  await content.getContent(cookie.username, cookie.password, requestedUsername)
+  await content.getContent(
+    decodeURI(cookie.username),
+    cookie.password,
+    requestedUsername
+  )
 ).reverse();
 
 const createContentDisplay = async (index) => {
@@ -47,5 +52,3 @@ mainWrap.addEventListener("scroll", async () => {
   )
     if (!(await createContentDisplay(contentIndex++))) return;
 });
-
-

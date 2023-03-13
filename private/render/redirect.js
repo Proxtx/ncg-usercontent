@@ -6,7 +6,10 @@ export const server = async (document, options) => {
     return;
   }
   if (
-    !(await auth(options.req.cookies.username, options.req.cookies.password))
+    !(await auth(
+      decodeURI(options.req.cookies.username),
+      options.req.cookies.password
+    ))
   ) {
     options.res.redirect("/login");
     return;

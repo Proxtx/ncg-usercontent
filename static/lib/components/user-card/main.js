@@ -11,12 +11,12 @@ export class Component {
 
   async loadInfo(username) {
     let info = await userInfo.getInfo(
-      cookie.username,
+      decodeURI(cookie.username),
       cookie.password,
       username
     );
     let allPhrases = await userInfo.getInfoPhrases(
-      cookie.username,
+      decodeURI(cookie.username),
       cookie.password
     );
 
@@ -35,7 +35,7 @@ export class Component {
       this.picture.src = "/file.route/?id=" + info.info.picture;
     }
 
-    if (username == cookie.username) {
+    if (username == decodeURI(cookie.username)) {
       this.editButton.style.display = "unset";
       this.editButton.addEventListener("click", async () => {
         await new Promise((r) => setTimeout(r, 200));

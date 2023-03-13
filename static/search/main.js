@@ -5,8 +5,8 @@ let input = document.getElementById("queryField").component.input;
 let userSuggestions = document.getElementById("userSuggestions");
 let searchButton = document.getElementById("searchButton");
 let user = document.getElementById("user");
-user.innerText = cookie.username;
-user.setAttribute("click", cookie.username);
+user.innerText = decodeURI(cookie.username);
+user.setAttribute("click", decodeURI(cookie.username));
 
 searchButton.addEventListener("click", () => {
   applySearch();
@@ -20,7 +20,7 @@ const applySearch = async () => {
   userSuggestions.innerHTML = "";
 
   let users = await search.searchUsers(
-    cookie.username,
+    decodeURI(cookie.username),
     cookie.password,
     input.value
   );
