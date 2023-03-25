@@ -33,7 +33,7 @@ export class Component {
       .join("");
     if (info.info.picture) {
       this.picture.src = "/file.route/?id=" + info.info.picture;
-    }
+    } else this.picture.src = "/lib/img/user.svg";
 
     if (username == decodeURI(cookie.username)) {
       this.editButton.style.display = "unset";
