@@ -20,10 +20,10 @@ if (
 
 loginButton.addEventListener("click", async () => {
   await new Promise((r) => setTimeout(r, 500));
-  cookie.username = encodeURI(username.component.value);
+  cookie.username = encodeURI(username.component.value.trim());
   cookie.password = password.component.value;
-  if (!(await meta.auth(username.component.value, password.component.value)))
-    alert("Benutzername oder Passwort ist falsch");
+  if (!(await meta.auth(username.component.value.trim(), password.component.value)))
+    alert("Benutzername oder Passwort ist falsch.  |"+cookie.username+"|,  |"+cookie.password+"|");
   else {
     location.pathname = "/";
   }
