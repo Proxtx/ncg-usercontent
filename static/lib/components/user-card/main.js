@@ -35,7 +35,7 @@ export class Component {
       this.picture.src = "/file.route/?id=" + info.info.picture;
     } else this.picture.src = "/lib/img/user.svg";
 
-    if (username == decodeURI(cookie.username)) {
+    if (username == decodeURI(cookie.username) && false) {
       this.editButton.style.display = "unset";
       this.editButton.addEventListener("click", async () => {
         await new Promise((r) => setTimeout(r, 200));
