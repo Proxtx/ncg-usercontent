@@ -18,11 +18,28 @@ export const addContent = async (
 };
 
 export const getContent = async (username, password, contentUsername) => {
-  if (!(await auth(username, password)) || username != contentUsername) return;
-  return await (await getUserFile(contentUsername)).getContent();
+  let user = await getUserFile(contentUsername);
+  if (
+    !(await auth(username, password)) ||
+    (username != contentUsername &&
+      !(user.data.access && user.data.access.includes(username)))
+  )
+    return;
+  return await user.getContent();
 };
 
 export const deleteContent = async (username, password, index) => {
   if (!(await auth(username, password))) return;
   await (await getUserFile(username)).deleteContent(index);
+};
+
+export const hasAccess = async (username, password, contentUsername) => {
+  let user = await getUserFile(contentUsername);
+  if (
+    !(await auth(username, password)) ||
+    (username != contentUsername &&
+      !(user.data.access && user.data.access.includes(username)))
+  )
+    return false;
+  return true;
 };

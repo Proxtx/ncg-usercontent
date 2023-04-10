@@ -20,7 +20,13 @@ let fileUploadHint = document.getElementById("fileUploadHint");
 let fileUploadHintImage = document.getElementById("fileUploadHintImage");
 let back = document.getElementById("back");
 
-if (requestedUsername != decodeURI(cookie.username))
+if (
+  !(await content.hasAccess(
+    decodeURI(cookie.username),
+    cookie.password,
+    requestedUsername
+  ))
+)
   viewButton.style.display = "none";
 
 back.addEventListener("click", async () => {
