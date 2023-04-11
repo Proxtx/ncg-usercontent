@@ -7,6 +7,7 @@ import { uploadHandler } from "./private/fileUpload.js";
 setConfig({
   ignoreParseHtml: ["/lib/components"],
   customScriptFileExtensions: [".html", ".route"],
+  logs: false,
 });
 
 let result = await listen(config.port);

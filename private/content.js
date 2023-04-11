@@ -30,7 +30,26 @@ class File {
       this.data = JSON.parse(
         await fs.readFile("users/" + this.username + ".json", "utf8")
       );
-    } catch {
+    } catch (e) {
+      console.log(
+        "unable to load file:",
+        "users/" + this.username + ".json",
+        e
+      );
+      try {
+        fs.access("users/" + this.username + ".json");
+      } catch (e) {
+        console.log("Access denied!", e);
+        console.log("Retry!");
+        await this.load();
+        return;
+      }
+
+      console.log("access granted. Local retry.");
+      this.data = JSON.parse(
+        await fs.readFile("users/" + this.username + ".json", "utf8")
+      );
+
       this.data = {
         username: this.username,
         content: [],
