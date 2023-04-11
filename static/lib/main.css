@@ -35,7 +35,7 @@ h6 {
 
 @font-face {
   font-family: Dosis;
-  src: url(dosis.ttf);
+  src: url(/lib/dosis.ttf);
 }
 
 body {
