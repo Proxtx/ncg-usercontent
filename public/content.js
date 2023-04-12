@@ -34,7 +34,8 @@ export const hasAccess = async (username, password, contentUsername) => {
   if (
     (config.access[contentUsername] &&
       config.access[contentUsername].includes(username)) ||
-    contentUsername == username
+    contentUsername == username ||
+    (config.access.global && config.access.global.includes(username))
   )
     return true;
   return false;
