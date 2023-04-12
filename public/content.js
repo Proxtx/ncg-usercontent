@@ -39,3 +39,8 @@ export const hasAccess = async (username, password, contentUsername) => {
     return true;
   return false;
 };
+
+export const favoriteContent = async (username, password, index, favorite) => {
+  if (!(await auth(username, password))) return false;
+  await (await getUserFile(username)).favoriteContent(index, favorite);
+};

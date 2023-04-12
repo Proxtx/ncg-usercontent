@@ -14,10 +14,10 @@
   --accentColor: #dd1c1a;
 }
 
-#deleteButton {
-  opacity: 0;
-}
-
 #text {
   padding: var(--contentSpacing);
+}
+
+#favorite {
+  --accentColor: #fcd53f;
 }

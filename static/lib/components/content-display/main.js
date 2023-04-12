@@ -7,6 +7,7 @@ export class Component {
     this.user = this.document.getElementById("user");
     this.text = this.document.getElementById("text");
     this.deleteButton = this.document.getElementById("deleteButton");
+    this.favoriteButton = this.document.getElementById("favorite");
   }
 
   async display(data, index, requestedUser) {
@@ -24,8 +25,12 @@ export class Component {
       this.text.innerText = data.content.content;
     }
 
+    if (decodeURI(cookie.username) != requestedUser)
+      this.deleteButton.style.display = "none";
+
+    if (data.favorite) this.favoriteButton.setAttribute("type", "contained");
+
     if (requestedUser == decodeURI(cookie.username)) {
-      this.deleteButton.style.opacity = 1;
       this.deleteButton.addEventListener("click", async () => {
         await new Promise((r) => setTimeout(r, 200));
         await content.deleteContent(
@@ -34,6 +39,22 @@ export class Component {
           index
         );
         location.href = location.href;
+      });
+
+      this.favoriteButton.addEventListener("click", async () => {
+        if (data.favorite) data.favorite = false;
+        else data.favorite = true;
+
+        await content.favoriteContent(
+          decodeURI(cookie.username),
+          cookie.password,
+          index,
+          data.favorite
+        );
+
+        if (data.favorite) {
+          this.favoriteButton.setAttribute("type", "contained");
+        } else this.favoriteButton.setAttribute("type", "outlined");
       });
     }
   }

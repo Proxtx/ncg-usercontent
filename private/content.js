@@ -87,6 +87,11 @@ class File {
     await this.save();
   }
 
+  async favoriteContent(index, favorite) {
+    (await this.getContent())[index].favorite = favorite;
+    await this.save();
+  }
+
   async appendContent(username, content) {
     (await this.getContent()).push({ time: Date.now(), username, content });
     await this.save();
