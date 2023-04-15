@@ -15,7 +15,7 @@ let download = document.getElementById("download");
 
 download.addEventListener("click", async () => {
   await new Promise((r) => setTimeout(r, 200));
-  let blob = new Blob([userTextDocument], { type: "text/plain;charset=utf-8" });
+  let blob = new Blob([userTextDocument]);
   var a = document.createElement("a");
   document.body.appendChild(a);
   a.style = "display: none";
@@ -46,11 +46,9 @@ let userContent = (
 userContent.sort((content) => (content.favorite ? -1 : 0));
 userContent = userContent;
 
-let userTextDocument = "";
+let userTextDocument = "Hier Steckbrief";
 
-userTextDocument += generateUrl(info.info.picture);
-
-userTextDocument += "\nHier Steckbrief einfügen";
+userTextDocument += "\n" + generateUrl(info.info.picture);
 
 const createContentDisplay = async (content) => {
   //if (index >= userContent.length) return false;
@@ -64,7 +62,7 @@ const createContentDisplay = async (content) => {
 let unused = [];
 let use = [];
 for (let v of userContent) {
-  if (v.content.type == "image" && use.length < 21) use.push(v);
+  if (v.content.type == "image" && use.length < 22) use.push(v);
   else unused.push(v);
 }
 
@@ -86,3 +84,5 @@ for (let u of unused) {
 for (let u of use) {
   userTextDocument += "\n" + generateUrl(u.content.content);
 }
+
+userTextDocument = userTextDocument.replace(/\n/g, "\r\n");
