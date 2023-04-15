@@ -46,9 +46,13 @@ let userContent = (
 userContent.sort((content) => (content.favorite ? -1 : 0));
 userContent = userContent;
 
-let userTextDocument = "Hier Steckbrief";
+let userTextDocument = "";
 
-userTextDocument += "\n" + generateUrl(info.info.picture);
+userTextDocument += generateUrl(info.info.picture);
+
+userTextDocument += "\n" + info.user.firstName + " " + info.user.name;
+
+userTextDocument += "\nHier Steckbrief";
 
 const createContentDisplay = async (content) => {
   //if (index >= userContent.length) return false;
@@ -62,7 +66,7 @@ const createContentDisplay = async (content) => {
 let unused = [];
 let use = [];
 for (let v of userContent) {
-  if (v.content.type == "image" && use.length < 22) use.push(v);
+  if (v.content.type == "image" && use.length < 21) use.push(v);
   else unused.push(v);
 }
 
